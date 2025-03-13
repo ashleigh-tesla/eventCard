@@ -1,34 +1,67 @@
-body {
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  font-family: monospace;
-  font-weight: bold;
+  font-family: Arial, sans-serif;
 }
+
 .card-container {
-  display: grid;
+  display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
 }
 
+/* Card styling */
 .card {
-  color: white;
-  background: lime;
-  width: 20rem; /* 20 times the root font size */
-  height: 25rem;
+  width: 20rem; /* Responsive width */
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Image */
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+/* Content */
+.card-content {
   padding: 1.5rem;
-  border-radius: 8px; /* Fixed size for consistency */
-  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.card-title {
-  font-size: 2.5em;
+.card-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
-.card-date-time {
-  font-size: 2.4em;
+.card-content p {
+  font-size: 1rem;
+  color: #666;
 }
-.card-location {
-  font-size: 2.4em;
+
+/* Button */
+button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
-.card-description {
-  font-size: 2.4em;
+
+button:hover {
+  background: #0056b3;
 }
