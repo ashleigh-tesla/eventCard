@@ -14,19 +14,42 @@
   background-color: #f5f5f5;
 }
 
+/* Animation */
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 1.5rem #00569f;
+  }
+  25% {
+    box-shadow: 0 0 1rem #fcb813;
+  }
+  50% {
+    box-shadow: 0 0 1.5rem #e01b2c;
+  }
+  75% {
+    box-shadow: 0 0 1rem #231f20;
+  }
+  100% {
+    box-shadow: 0 0 1.5rem #006637;
+  }
+}
+
 /* Card styling */
 .card {
   width: 20rem; /* Responsive width */
-  background: white;
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: transform 0.3s ease-in-out;
+  background: white; /* White background */
+  border-radius: 1rem; /* Rounded corners */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); /* Soft shadow */
+  overflow: hidden; /* Hide overflowing content */
+  text-align: center; /* Center text */
+  animation: glowing 2.5s infinite alternate; /* Glow animation */
+  transition: transform 0.7s ease-in-out, box-shadow 0.7s ease-in-out; /* Smooth animation */
 }
 
+/* Stop animation and scale up on hover */
 .card:hover {
-  transform: scale(1.05);
+  animation: none; /* Stops the glow animation */
+  transform: scale(1.05); /* Slightly enlarge the card */
+  box-shadow: 0 0 2rem rgba(0, 123, 255, 1); /* Keep a solid glow */
 }
 
 /* Image */
