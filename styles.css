@@ -69,10 +69,57 @@
   margin-bottom: 0.5rem; /* Spacing */
 }
 
+.card-content h3 {
+  font-size: 1.2rem; /* Font size */
+  color: #00569f; /* Blue text color */
+  font-weight: bold; /* Bold text */
+  margin-bottom: 0.5rem; /* Spacing */
+}
+
 .card-content p {
   font-size: 1rem; /* Font size */
   color: #666; /* Light text color */
-  margin-bottom: 1rem; /* Spacing */
+  margin-bottom: 0.5rem; /* Spacing */
+}
+
+.card-content a {
+  text-decoration: none; /* Remove underline */
+  color: #006637; /* Blue text color */
+  font-weight: bold; /* Bold text */
+  font-size: 1.2rem; /* Font size */
+  margin: 0.5rem 0; /* Spacing */
+  display: inline-block; /* Inline block */
+  transition: color 0.3s; /* Smooth transition */
+}
+
+.card-content a:hover {
+  color: #fcb813; /* Yellow text color on hover */
+}
+.card-content .rsvp {
+  display: flex; /* Flexbox layout */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin: 0.5rem 0; /* Spacing */
+}
+
+.card-content .rsvp p {
+  padding: 0; /* Remove default padding */
+  margin-right: 0.5rem; /* Spacing */
+}
+
+.card-content .rsvp .rsvp-status {
+  padding: 0;
+  margin-left: 0.5rem; /* Spacing */
+  cursor: pointer; /* Cursor on hover */
+  font-weight: bold; /* Bold text */
+  font-size: 1.2rem; /* Font size */
+  transition: color 0.3s; /* Smooth transition */
+}
+.going {
+  color: #006637; /* Green text color */
+}
+.not-going {
+  color: #e01b2c; /* Red text color */
 }
 
 /* Button */
