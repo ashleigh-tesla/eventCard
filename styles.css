@@ -11,7 +11,6 @@
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
   height: 100vh; /* Full viewport height */
-  background-color: #f5f5f5; /* Light background color */
 }
 
 /* Animation */
@@ -123,7 +122,7 @@
 }
 
 /* Button */
-button {
+.open-modal {
   padding: 0.75rem 1.5rem; /* Padding */
   margin-top: 1rem; /* Spacing */
   font-size: 1.2rem; /* Font size */
@@ -141,7 +140,7 @@ button {
 }
 
 /* Button hover effect */
-button:hover {
+.open-modal:hover {
   background: linear-gradient(
     135deg,
     #e01b2c,
@@ -150,6 +149,89 @@ button:hover {
 }
 
 /* Button active effect */
-button:active {
+.open-modal:active {
   transform: scale(0.95); /* Slightly shrink on click */
+}
+
+/* Modal styles */
+/* Modal background (keeps modal in place) */
+.modal-overlay {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed position */
+  top: 0; /* Top position */
+  left: 0; /* Left position */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background: rgba(35, 31, 32, 0.6); /* Semi-transparent background */
+  z-index: 1; /* Overlay on top of other elements */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+/* Modal content */
+.modal {
+  /* background: linear-gradient(135deg, #00569f, #fcb813, #e01b2c, #006637); */
+  /* color: white; */
+  background: white;
+  color: #231f20;
+  width: 70%; /* Set width */
+  max-width: 800px; /* Limit width */
+  max-height: 80vh; /* Limit height to viewport */
+  overflow-y: auto; /* Enable scrolling if needed */
+  padding: 2rem; /* Spacing */
+  border-radius: 1rem; /* Rounded corners */
+  box-shadow: 0px 4px 8px rgba(35, 31, 32, 0.2);
+  position: relative;
+}
+
+/* Close button */
+.close-modal {
+  position: absolute;
+  top: 1rem; /* Adjust position */
+  right: 1rem; /* Adjust position */
+  font-size: 2rem; /* Larger font size */
+  font-weight: bold; /* Bold text */
+  cursor: pointer; /* Cursor on hover */
+  background: none; /* Transparent background */
+  border: none; /* Remove border */
+  color: #231f20; /* Dark text color */
+  transition: color 0.3s; /* Smooth transition */
+}
+
+.close-modal:hover {
+  color: #e01b2c; /* Red text color on hover */
+}
+
+/* Button active effect */
+.close-modal:active {
+  transform: scale(0.95); /* Slightly shrink on click */
+}
+
+/* Scrollable content */
+.modal-content {
+  max-height: 60vh; /* Adjust to fit content */
+  overflow-y: auto; /* Enable scrolling if needed */
+  padding: 10px; /* Spacing */
+  text-align: left; /* Left-align text */
+}
+/* Responsive design */
+/* For devices less than 540px (e.g., mobile devices) */
+@media (max-width: 539px) {
+  .card {
+    width: 20rem; /* Responsive width */
+  }
+}
+
+/* For devices between 540px and 1024px (e.g., tablets and small laptops) */
+@media (min-width: 540px) and (max-width: 1024px) {
+  .card {
+    width: 25rem; /* Responsive width */
+  }
+}
+
+/* For devices above 1024px (e.g., desktops and large screens) */
+@media (min-width: 1025px) {
+  .card {
+    width: 30rem; /* Responsive width */
+  }
 }

@@ -1,8 +1,8 @@
-document.getElementById("card-btn").addEventListener("click", function () {
-  alert(
-    "The 2025 G20 Johannesburg Summit, scheduled for November 22–23, 2025, will be the first G20 summit held on the African continent. Under the theme 'Solidarity, Equality, Sustainability,' South Africa aims to prioritize inclusive economic growth, food security, and leveraging artificial intelligence for sustainable development. Additionally, the presidency will focus on climate finance for countries affected by climate-related disasters and provide debt relief to developing nations!"
-  );
-});
+// document.getElementById("card-btn").addEventListener("click", () => {
+//   alert(
+//     "The G20 Summit in South Africa will feature a mesmerizing accordion ensemble, uniting world leaders through the universal language of music. \nCurated by the Ministry of Arts and Culture in collaboration with the Global Harmony Initiative, this one-of-a-kind performance will bring together master accordionists from G20 nations, weaving a rich tapestry of global musical traditions. \nSet against the vibrant backdrop of Johannesburg, the performance will include a powerful rendition of Nkosi Sikelel' iAfrika, seamlessly infused with folk melodies from around the world. \nThis evocative arrangement is set to be a summit highlight, with leaders expected to participate in a moment of cultural resonance. \nFrench President Élodie Marchand has called the initiative “diplomacy set to music.” \n The interlude will culminate in a symbolic exchange of handcrafted accordions among heads of state, a gesture underscoring the summit’s commitment to cultural dialogue, unity, and cooperation. \nThrough the power of music, the world will witness harmony in action—one note at a time."
+//   );
+// });
 
 const startCountdown = (targetDate) => {
   function updateCountdown() {
@@ -66,3 +66,43 @@ const toggleRSVP = () => {
     rsvpStatus.textContent = "Not Going";
   }
 };
+
+const checkScreenSize = () => {
+  if (window.matchMedia("(max-width: 539px)").matches) {
+    document.body.style.backgroundColor = "#00569f";
+  } else if (
+    window.matchMedia("(min-width: 540px) and (max-width: 1024px)").matches
+  ) {
+    document.body.style.backgroundColor = "#006637";
+  } else {
+    document.body.style.backgroundColor = "#e01b2c";
+  }
+};
+
+// Run on page load
+checkScreenSize();
+
+// Listen for resize events
+window.addEventListener("resize", checkScreenSize);
+
+// Select elements
+const openModalBtn = document.querySelector(".open-modal");
+const modalOverlay = document.querySelector(".modal-overlay");
+const closeModalBtn = document.querySelector(".close-modal");
+
+// Open modal on button click
+openModalBtn.addEventListener("click", () => {
+  modalOverlay.style.display = "flex";
+});
+
+// Close modal when clicking the close button
+closeModalBtn.addEventListener("click", () => {
+  modalOverlay.style.display = "none";
+});
+
+// Prevent modal from closing when clicking outside it
+modalOverlay.addEventListener("click", (e) => {
+  if (e.target === modalOverlay) {
+    e.stopPropagation(); // Prevent closing on overlay click
+  }
+});
